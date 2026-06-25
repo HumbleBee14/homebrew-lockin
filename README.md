@@ -10,10 +10,12 @@ brew tap humblebee14/lockin
 brew install --cask lockin
 ```
 
-Or do it in one line without tapping first:
+Recent Homebrew versions ask you to trust a third-party tap before installing
+from it. If you see a `Refusing to load cask ... from untrusted tap` message,
+run this once, then install again:
 
 ```sh
-brew install --cask humblebee14/lockin/lockin
+brew trust humblebee14/lockin
 ```
 
 ## Upgrade
