@@ -1,6 +1,6 @@
 cask "lockin" do
-  version "1.3.7"
-  sha256 "d16189fa250206592cf5915f4e13de9073c974fa0312c7a842adca83a743d8b4"
+  version "1.3.8"
+  sha256 "7790cd026f685b1c12bf6303396c01f68d9dc84ad132eda958c43df353a889b4"
 
   url "https://github.com/HumbleBee14/LockIn/releases/download/v#{version}/LockIn.dmg"
   name "LockIn"
