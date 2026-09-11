@@ -16,11 +16,16 @@ cask "lockin" do
 
   app "LockIn.app"
 
-  uninstall launchctl: [
-              "com.humblebee.lockin.agent",
-              "com.humblebee.lockin.daemon",
-            ],
-            quit:      "com.humblebee.lockin"
+  # `launchctl:` kept out on purpose: Homebrew runs this stanza on `brew upgrade` too, and
+  # stopping the root daemon mid-upgrade drops the lock screen, pauses app blocking, and forces
+  # a re-approval in System Settings. The daemon survives the bundle swap and picks up the new
+  # binary at next boot. Real removal goes through LockIn → Settings → Uninstall (see caveats).
+  # uninstall launchctl: [
+  #             "com.humblebee.lockin.agent",
+  #             "com.humblebee.lockin.daemon",
+  #           ],
+  #           quit:      "com.humblebee.lockin"
+  uninstall quit: "com.humblebee.lockin"
 
   zap trash: [
     "~/Library/Application Support/LockIn",
